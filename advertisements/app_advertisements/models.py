@@ -5,7 +5,7 @@ from django.db import models
 
 class Advertisement(models.Model):
     # Заголовок
-    id = models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')
+    # id = models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')
     title = models.CharField('заголовок', max_length=128)
     # Описание
     description = models.TextField('описание')
@@ -18,8 +18,8 @@ class Advertisement(models.Model):
     # Обновление
     updated_at = models.DateTimeField(auto_now=True)
 
-    class Meta:
-        db_table = 'advertisements'
-
-    def __str__(self):
-        return f'<Advertisement(id={self.id}, title={self.title}, price={self.price})>'
+    # class Meta:
+    #     db_table = 'advertisements'
+    #
+    # def __str__(self):
+    #     return f'<Advertisement(id={self.id}, title={self.title}, price={self.price})>'
