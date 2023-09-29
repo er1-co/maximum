@@ -1,6 +1,9 @@
 from django.db import models
+from django.contrib.auth import get_user_model
 
 # Create your models here.
+
+User = get_user_model()
 
 
 class Advertisement(models.Model):
@@ -17,7 +20,10 @@ class Advertisement(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     # Обновление
     updated_at = models.DateTimeField(auto_now=True)
-
+    # пользователь
+    user = models.ForeignKey(User, verbose_name='пользователь', on_delete=models.CASCADE)
+    # изображение
+    image = models.ImageField('изображение', upload_to='advertisements/')
     # class Meta:
     #     db_table = 'advertisements'
     #
