@@ -24,8 +24,3 @@ class Advertisement(models.Model):
     user = models.ForeignKey(User, verbose_name='пользователь', on_delete=models.CASCADE)
     # изображение
     image = models.ImageField('изображение', upload_to='advertisements/')
-    # class Meta:
-    #     db_table = 'advertisements'
-    #
-    # def __str__(self):
-    #     return f'<Advertisement(id={self.id}, title={self.title}, price={self.price})>'
